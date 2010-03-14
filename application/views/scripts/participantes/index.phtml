@@ -1,1 +1,119 @@
-participantes::index
+<div class="w50" style="color:#333;padding-left:50px;">
+	<br />
+	<h2>
+	O que é FLISOL?
+	</h2>
+	<p>
+	<strong>O Festival Latino americano de Instalação de Software Livre (FLISOL)</strong> é um festival anual de
+	instalação de software livre, gratuito e aberto a toda a comunidade, realizado desde 2005 em 
+	diversos países da américa latina, inclusive no Brasil.
+	</p>
+	
+	<p>
+	O evento tem o propósito de promover o uso de softwares livres e a integração de comunidades 
+	de usuários de software livre em todos os paí ses da América Latina.
+	</p>
+	
+	<p>
+	A capital Federal
+	(Brasília) entrará nessa maratona pela 5ª vez. Ele ocorrerá no dia 24 de Abril de 2010 na
+	Faculdade Jesus Maria José (FAJESU – QNG 46 – Taguatinga Norte), às 09:00 horas da manhã e
+	tem término previsto para às  17:00 horas, com a solenidade de encerramento.
+	</p>
+	
+	<p>
+	
+	A instalação de Software Livre é feita de forma gratuita por pessoas tecnicamente preparadas 
+	para tal procedimento. Aplicativos livres também são instalados nos computadores, independendo 
+	do sistema operacional, sendo observadas a compatibilidade do aplicativo com o sistema em questão.
+	
+	</p>
+	
+	<p>
+	
+	O FLISOL busca estreitar e ampliar o contato de usuários de computadores com o mundo do Software
+	Livre. O evento permite que as pessoas conheçam outros usuários, troquem dúvidas e sugestões.
+	O objetivo maior é promover um intercâmbio de conhecimentos bastante sadio e aumentar a colaboração
+	entre os participantes do evento.
+	
+	</p>
+	
+	<p>
+	
+	Participe dos mini-cursos e  palestras e inicie a sua jornada no mundo Livre. Estamos programando uma série de atividades para a realização do Flisol em Brasília-DF. Estas atividades envolvem a preparação do material, divulgação e organização das equipes para o installfest e para as palestras.
+	
+	</p>
+	
+	<p>
+
+    * As Distribuições que serão instaladas.
+    	<ul>
+	    	<li>Debian;</li>
+	    	<li>Ubuntu;</li>
+	    	<li>Mandriva entre outras.</li>
+    	</ul>
+   </p>
+	
+	
+</div>
+
+<div class="w30" style="padding-left:50px;">
+<br />
+<h2>Faça a sua inscrição</h2>
+	<form name="formulario" method="post" action="<?php echo $this->baseUrl(); ?>/participantes/cadastrar">
+		<fieldset><legend>Login</legend>
+			<p>Nome: *<br />
+				<input type="text" class="required" name="nome" />
+			</p>
+			
+			<p>E-mail: *<br />
+				<input type="text" class="required email" name="email" />
+			</p>
+			
+			<p>Senha: *<br />
+				<input type="password" id="senha" class="required" name="senha" />
+			</p>
+			
+			<p>Confirme a senha: *<br />
+				<input type="password" class="required" name="senha2" />
+			</p>
+			
+			<p>Site/Blog:<br />
+				<input type="text" name="site" value="http://" />
+			</p>
+			
+			<p>CPF:<br />
+				<input type="text" name="cpf" />
+			</p>
+			
+			<p>CEP:<br />
+				<input type="text" name="cep" />
+			</p>
+			
+			<p>UF:<br />
+			<?php echo $this->formSelect('uf_id', null, null, $this->ufs); ?>
+			</p>
+			
+			<p>Cidade:<br />
+				<input type="text" name="cidade" />
+			</p>
+			
+			<p><input type="submit" value="Cadastrar" /></p>
+			
+		</fieldset>
+	</form>
+</div>
+<script type="text/javascript">
+	    $(document).ready(function() {
+			$("form").validate({
+				ignoreTitle: true,
+				rules: {
+			    senha: "required",
+			    senha2: {
+			      equalTo: "#senha"
+			    }
+			  }
+			});
+	    	}
+		);
+	    </script>

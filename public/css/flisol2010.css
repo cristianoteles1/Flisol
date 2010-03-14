@@ -33,7 +33,14 @@ input[type=submit]{
 	border:0px;
 }
 input[type=text]{
-	width:100%;
+	width:99%;
+	background: #FFF;
+	padding:3px;
+	color:#666;
+	border:#DFDFDF solid 1px;
+}
+input[type=password]{
+	width:99%;
 	background: #FFF;
 	padding:3px;
 	color:#666;
@@ -45,6 +52,12 @@ form input[type=submit]:hover{
 	color:#333;
 	border:0px;
 	cursor:pointer;
+}
+form fieldset{
+	border:#FFF solid 1px;
+}
+form fieldset legend{
+	text-indent:-5000px;
 }
 select{
 	background: #FFF;
@@ -168,6 +181,7 @@ Desc: Área principal, local dos formulários
 */
 div#wrapper div#content hr{
 	clear:both;
+	border:#fff solid 1px;
 }
 
 /*

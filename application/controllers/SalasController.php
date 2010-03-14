@@ -6,7 +6,7 @@
  * @subpackage  <<application>>.application.controllers
  * @version     $Id$
  */
-class SalasController extends Zend_Controller_Action
+class SalasController extends Phpdf_Controller_Action
 {
 	
 	public function indexAction()
@@ -34,14 +34,23 @@ class SalasController extends Zend_Controller_Action
 	    $id = $this->_getParam('id', null);
 	    $sala = new Sala();
 	    
+        $dados   = $this->_getAllParams();
 	    if($id) {
 	        $rowSala = $sala->find($id)->current();
 	    } else {
     	    $rowSala = $sala->createRow();
+    	    unset($dados['id']);
 	    }
 	    
-	    $rowSala->setFromArray($this->_getAllParams());
-	    $rowSala->save();
+	    $rowSala->setFromArray($dados);
+	    try {
+	        $rowSala->save();
+    	} catch ( Exception $e ) {
+            echo '<pre>Exception: '; print_r( $e ); echo '</pre>';
+            echo '<pre>Data:      '; print_r( $rowSala ); echo '</pre>';
+            exit();
+        }
+        
 	    $this->_redirect('salas/index');
 	}
 }

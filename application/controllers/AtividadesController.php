@@ -7,7 +7,7 @@
  * @subpackage  <<application>>.application.controllers
  * @version     $Id$
  */
-class AtividadesController extends Zend_Controller_Action
+class AtividadesController extends Phpdf_Controller_Action
 {
 	
 	public function indexAction()
